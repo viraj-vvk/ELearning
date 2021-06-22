@@ -49,7 +49,10 @@
      <h1 class="text-center">COURSE</h1>
    </div>
    <div class="col-sm-12 space_all">
-    <div class="col-sm-8">
+       <br>
+       <br>
+       <br>
+    <div class="col-sm-12">
 	 <div class="blog_1">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -136,6 +139,42 @@
 	   </div>
 	  </div>
 	 </div>
+
+	 
+
+	 
+   
+<script type="text/javascript">
+$(document).ready(function(){
+	/*****Fixed Menu******/
+	var secondaryNav = $('.cd-secondary-nav'),
+	   secondaryNavTopPosition = secondaryNav.offset().top;
+		$(window).on('scroll', function(){
+			if($(window).scrollTop() > secondaryNavTopPosition ) {
+				secondaryNav.addClass('is-fixed');	
+			} else {
+				secondaryNav.removeClass('is-fixed');
+			}
+		});	
+		
+});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+	</script>
+
+
 </body>
        
 </html>
