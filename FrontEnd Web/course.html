@@ -11,9 +11,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
 	 <link href="css/ken-burns.css" rel="stylesheet" type="text/css" media="all" />
-	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-
   </head>
 <body>
 
@@ -42,8 +39,85 @@
 			   </ul>
               
 			   <div class="top_1 clearfix">
-				   
+          <div class="login">
+            <ul class="nav-login">
+              <li class="tell_main_8"><a href="#" data-toggle="modal" data-target="#myModal1">Login</a></li>
+              <li class="tell_main_9"><a href="#" data-toggle="modal" data-target="#myModal2">Signup</a></li>
+            </ul>
+          </div>
+      <!-- <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content modal-info">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+                </div>
+                <div class="modal-body modal-spa">
+                  <div class="login-grids">
+                  
+                      <div class="login-right">
+                        <form action="#" method="post">
+                          <h3>Signin with your account </h3>
+                          <input type="text" value="Enter your mobile number or Email" name=" Email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}" required="">	
+                          <input type="password" value="Password" name="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">	
+                          <h4><a href="#">Forgot password</a> / <a href="#">Create new password</a></h4>
+                          <div class="single-bottom">
+                            <input type="checkbox"  id="brand" value="">
+                            <label for="brand"><span></span>Remember Me.</label>
+                          </div>
+                          <input type="submit" value="SIGNIN" >
+                        </form>
+                      </div>
+                      
+                    <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+           //login 
+
+
+           //signup 
+
+
+          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content modal-info">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+                </div>
+                <div class="modal-body modal-spa">
+                  <div class="login-grids">
+                  
+                      <div class="login-right">
+                        <form action="#" method="post">
+                          <h3>Create your account </h3>
+                          <input type="text" value="Name" name="Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Name';}" required="">
+                          <input type="text" value="Mobile number" name="Mobile number" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+                          <input type="text" value="Email id" name="Email id" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Email id';}" required="">	
+                          <input type="password" value="Password" name="Password" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Password';}" required="">	
+                          
+                          <input type="submit" value="CREATE ACCOUNT" >
+                        </form>
+                      </div>
+                    
+                    <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
+          </div>
+          /.navbar-collapse -->
+        </nav>
+     </div>
+    </div> 
+     </div>
 </section>
+
 <section id="blog" class="clearfix">
    <div class="col-sm-12 space_all blog_t">
      <h1 class="text-center">COURSE</h1>
@@ -52,50 +126,6 @@
        <br>
        <br>
        <br>
-    <div class="col-sm-12">
-	 <div class="blog_1">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item">
-          <img src="img/8.jpg" alt="...">
-          <div class="carousel-caption">
-            <h2>Trending Course By Ramandeep Singh</br>On Java Advance</h2>
-			<p>Lets Start Learning</p>
-          </div>
-        </div>
-        <div class="item active">
-          <img src="img/9.png" alt="...">
-          <div class="carousel-caption">
-             <h2>Trending Course By Abhijit Das</br>On Angular</h2>
-			<p>Lets Start Learning</p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/10.jpg" alt="...">
-          <div class="carousel-caption">
-            <h2>Trending Course By Amrit Singh</br>On Cloud</h2>
-			<p>Lets Start Learning</p>
-          </div>
-        </div>
-      </div>
-      <!-- Controls -->
-      <a class="left carousel-control" href="http://bootsnipp-env.elasticbeanstalk.com/iframe/xBdN#carousel-example-generic" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="http://bootsnipp-env.elasticbeanstalk.com/iframe/xBdN#carousel-example-generic" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div>
-	</div>
-	 <div class="col-sm-12 space_all">
 	  <div class="col-sm-6">
 	   <div class="blog_2">
 	    
@@ -134,47 +164,90 @@
 		<div class="blog_main clearfix">
 		 <h3><a href="CourseSQL.html">SQL</a></h3>
 		<p>SQL stands for Structured Query Language which is basically a language used by databases.</p>
-		
 		</div>
 	   </div>
 	  </div>
+
+    
 	 </div>
 
-	 
-
-	 
+   <div class="col-sm-6">
+    <div class="blog_2">
+     
+   <div class="blog_main clearfix">
+    <h3><a href="CourseWebApplications.html">Web Applications</a></h3>
+   <p>A web application (or web app) is application software that runs on a web server, unlike computer-based software programs that are run locally on the operating system (OS) of the device. </p>
    
-<script type="text/javascript">
-$(document).ready(function(){
-	/*****Fixed Menu******/
-	var secondaryNav = $('.cd-secondary-nav'),
-	   secondaryNavTopPosition = secondaryNav.offset().top;
-		$(window).on('scroll', function(){
-			if($(window).scrollTop() > secondaryNavTopPosition ) {
-				secondaryNav.addClass('is-fixed');	
-			} else {
-				secondaryNav.removeClass('is-fixed');
-			}
-		});	
-		
-});
-	</script>
-<script type="text/javascript">
-	$(document).ready(function() {
-    $('#Carousel').carousel({
-        interval: 5000
-    })
-});
-	</script>
-<script type="text/javascript">
-	$(document).ready(function() {
-    $('#Carousel').carousel({
-        interval: 5000
-    })
-});
-	</script>
+   </div>
+    </div>
+   </div>
 
+   <div class="col-sm-6">
+    <div class="blog_2">
+     
+   <div class="blog_main clearfix">
+    <h3><a href="CourseHTML.html">HTML</a></h3>
+   <p>Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages. </p>
+   
+   </div>
+    </div>
+   </div>
 
+   <div class="col-sm-6">
+    <div class="blog_2">
+     
+   <div class="blog_main clearfix">
+    <h3><a href="CourseCSS.html">CSS</a></h3>
+   <p>CSS describes how HTML elements are to be displayed on screen, paper, or in other media· </p>
+   
+   </div>
+    </div>
+   </div>
+
+   <div class="col-sm-6">
+    <div class="blog_2">
+     
+   <div class="blog_main clearfix">
+    <h3><a href="CourseJavaScript.html">Javascript</a></h3>
+   <p>JavaScript is a programming language commonly used in web development. </p>   
+   </div>
+    </div>
+   </div>
+
+</section>
+
+<section id="our">
+  <div class="container">
+   <div class="row">
+   <div class="col-sm-6">
+    <div class="col-sm-12 space_all">
+     
+     <div class="col-sm-12 space_all">
+      <div class="our_5">
+       <h4><a href="#"><i class="fa fa-map-marker"></i> Address</a></h4>
+     <h5><a href="#">TIAA Global Business Services India</a></h5>
+     <p><a href="#">Tower 4, World Trade Center</a></p>
+     <h6><a href="#">Pune, Maharashtra</a></h6>
+      </div>
+      <div class="our_6">
+       <h3 class="icon_h"><a href="#"><i class="fa fa-envelope"></i> Email</a></h3>
+       <h4><a href="#">info@gmail.com</a></h4>
+      </div>
+      <div class="our_7">
+       <h3 class="icon_h"><a href="#"><i class="fa fa-phone"></i> Phone</a></h3>
+      </div>
+      <div class="our_8">
+       <h4><a href="#">+91 12 3456 7890 </a></h4>
+     <h4><a href="#">+91 12 3456 7890 </a></h4>
+      </div>
+ 
+     </div>
+    </div> 
+   </div>
+    </div>
+   </div>
+  </div>
+ </section>  
 </body>
        
 </html>
