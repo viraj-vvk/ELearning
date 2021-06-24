@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learner</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+	 <link href="css/ken-burns.css" rel="stylesheet" type="text/css" media="all" />
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+  </head>
+<body>
+
+<section id="header" class="cd-secondary-nav">
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-12">
+     <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a class="navbar-brand" href="index.html">E Learning</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               
+               <ul class="nav navbar-nav navbar">
+                  <li class=""><a class="color_1" href="index.html">HOME</a></li>
+				  <li class="active_1"><a class="color_1" href="course.html">COURSE</a></li>
+				  <li><a class="color_1" href="detail.html">MENTORS DETAIL</a></li>     
+			   </ul>
+              
+			   <div class="top_1 clearfix">
+				   
+</section>
+<section id="blog" class="clearfix">
+   <div class="col-sm-12 space_all blog_t">
+     <h1 class="text-center">COURSE</h1>
+   </div>
+   <div class="col-sm-12 space_all">
+       <br>
+       <br>
+       <br>
+    <div class="col-sm-12">
+	 <div class="blog_1">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="img/8.jpg" alt="...">
+          <div class="carousel-caption">
+            <h2>Trending Course By Ramandeep Singh</br>On Java Advance</h2>
+			<p>Lets Start Learning</p>
+          </div>
+        </div>
+        <div class="item active">
+          <img src="img/9.png" alt="...">
+          <div class="carousel-caption">
+             <h2>Trending Course By Abhijit Das</br>On Angular</h2>
+			<p>Lets Start Learning</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/10.jpg" alt="...">
+          <div class="carousel-caption">
+            <h2>Trending Course By Amrit Singh</br>On Cloud</h2>
+			<p>Lets Start Learning</p>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="http://bootsnipp-env.elasticbeanstalk.com/iframe/xBdN#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="http://bootsnipp-env.elasticbeanstalk.com/iframe/xBdN#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+	</div>
+	 <div class="col-sm-12 space_all">
+	  <div class="col-sm-6">
+	   <div class="blog_2">
+	    
+		<div class="blog_main clearfix">
+		 <h3><a href="CourseAngular.html">Angular</a></h3>
+		<p>Angular is a platform and framework for building single-page client applications using HTML and TypeScript. </p>
+		
+		</div>
+	   </div>
+	  </div>
+	  <div class="col-sm-6">
+	   <div class="blog_2">
+	   
+		<div class="blog_main clearfix">
+		 <h3><a href="CourseJava.html">Java</a></h3>
+		<p>Java is a general-purpose, class-based, object-oriented programming language designed for having lesser implementation dependencies.</p>
+		
+		</div>
+	   </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-12 space_all">
+	  <div class="col-sm-6">
+	   <div class="blog_2">
+	    
+		<div class="blog_main clearfix">
+		 <h3><a href="CourseCloud.html">Cloud</a></h3>
+		<p>"The cloud" refers to servers that are accessed over the Internet, and the software and databases that run on those servers.</p>
+		
+		</div>
+	   </div>
+	  </div>
+	  <div class="col-sm-6">
+	   <div class="blog_2">
+	   
+		<div class="blog_main clearfix">
+		 <h3><a href="CourseSQL.html">SQL</a></h3>
+		<p>SQL stands for Structured Query Language which is basically a language used by databases.</p>
+		
+		</div>
+	   </div>
+	  </div>
+	 </div>
+
+	 
+
+	 
+   
+<script type="text/javascript">
+$(document).ready(function(){
+	/*****Fixed Menu******/
+	var secondaryNav = $('.cd-secondary-nav'),
+	   secondaryNavTopPosition = secondaryNav.offset().top;
+		$(window).on('scroll', function(){
+			if($(window).scrollTop() > secondaryNavTopPosition ) {
+				secondaryNav.addClass('is-fixed');	
+			} else {
+				secondaryNav.removeClass('is-fixed');
+			}
+		});	
+		
+});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+	</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#Carousel').carousel({
+        interval: 5000
+    })
+});
+	</script>
+
+
+</body>
+       
+</html>

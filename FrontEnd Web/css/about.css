@@ -1,0 +1,260 @@
+/*
+Template Name:Ultra Education Zone
+File: Layout CSS
+Author: Templates On Web
+Author URI: http://templateonweb.com/
+Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152">Website Template Licence</a>
+*/
+/*********************about****************/
+
+#about_page{
+ padding-top:40px;
+ padding-bottom:50px; 
+  }
+.about_page_1r p{
+margin-bottom:10px;  
+  }
+.careers_1{
+  margin-top:20px;  
+	}
+.careers_1i h3{
+ color:#666; 
+  }
+/*********************about_end****************/
+
+/*********************register****************/
+#register{
+background-image: url(../img/9.jpg);  
+   }
+.register_m{
+ background: #080d15b5; 
+ padding-top:80px;
+ padding-bottom:80px;
+   }
+.register_1l{
+ background:#ffe67d33;
+ padding:40px 40px 45px 40px; 
+  }
+.register_1l h3{
+ color:#fff; 
+  }
+.register_1l p{
+ color:#eee;
+ font-size:18px;
+ margin-top:10px;
+ margin-bottom:10px; 
+  }
+.register_1l .form-control{
+margin-top:10px;
+width:80%;
+margin-left:auto;
+margin-right:auto;
+font-size:16px;
+height:50px;
+  }
+.register_1l .button{
+ border:1px solid #fff; 
+  }
+.register_1l .button:hover{
+ border:1px solid #000; 
+  }
+.register_1r h1{
+ color:#fff; 
+  }
+.register_1r p{
+ color:#ccc; 
+ font-size:18px;
+ margin-top:10px;
+  }
+.register_1r ul{
+margin-top:20px;
+  }
+.register_1r ul li{
+margin-bottom:10px;
+color:#ccc;
+font-size:18px;
+  }
+.register_1r ul li i{
+color:#00c5b5;
+margin-right:5px;
+  }
+/*********************register_end****************/
+
+/*********************team_page****************/
+.Categories_1 p{
+ font-size:18px;
+ margin-top:10px;
+ }
+.Categories_1 h1{
+font-weight:bold;
+ }
+#team_page{
+ padding-top:40px; 
+ padding-bottom:40px; 
+  }
+.Categories_1{
+margin-bottom:30px;  
+  }
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+/*-----------------*/
+/***** Steve *****/
+/*-----------------*/
+
+figure.effect-steve {
+	z-index: auto;
+	overflow: visible;
+}
+
+figure.effect-steve:before {
+	box-shadow: 0 3px 30px rgba(0,0,0,0.8);
+	opacity: 0;
+}
+
+figure.effect-steve figcaption {
+	z-index: 1;
+}
+
+figure.effect-steve img {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: perspective(1000px) translate3d(0,0,0);
+	transform: perspective(1000px) translate3d(0,0,0);
+}
+
+figure.effect-steve h3 {
+	background: #0000002e;
+	color: #fff;
+}
+
+
+figure.effect-steve h3 {
+	margin-top: 1em;
+	padding: 0.5em;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(0.9,0.9,1);
+	transform: scale3d(0.9,0.9,1);
+}
+
+figure.effect-steve:hover:before {
+	opacity: 1;
+}
+
+figure.effect-steve:hover img {
+	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
+	transform: perspective(1000px) translate3d(0,0,21px);
+}
+
+figure.effect-steve:hover h3 {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+/*********************team_page_end****************/
+
+
+
+@media screen and (max-width : 767px){
+#about_page{
+  text-align:center;
+  }
+.about_page_1r {
+ margin-top:15px;
+ }
+.careers_1{
+display:flex;
+flex-wrap:wrap;
+  }
+.careers_1i{
+text-align:left;  
+  }
+.course_1i {
+ margin-top:15px; 
+  }
+.register_1l{
+ padding:20px 15px; 
+  }
+.register_1r {
+margin-top:15px;
+text-align:center; 
+ }
+.testimonial_hm {
+margin-top:10px;  
+  }
+#team_page{
+ text-align:center;  
+  }
+#team_page .grid figure img{
+ width:100%; 
+  }
+#team_page .grid figure{
+ margin-top:15px;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+figure.effect-steve h3{
+ margin-top:10px;
+ font-size:20px; 
+  }
+ }
+ @media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1325px) {
+
+ }
+
+
+
