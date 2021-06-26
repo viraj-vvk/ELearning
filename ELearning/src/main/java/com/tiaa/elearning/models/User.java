@@ -18,7 +18,7 @@ public class User {
 	private User created_by;
 	
 	@DBRef
-	private Set<Role> role;
+	private Set<Role> roles;
 
 	@Indexed(unique = true,direction = IndexDirection.DESCENDING, dropDups = true)
 	private String email;
@@ -32,7 +32,7 @@ public class User {
 	private String created_on;
 	private String updated_on;
 	private String thumbnail;
-	private String ratings;
+	private int ratings=0;
 	private boolean enabled;
 	
 	public User() {}
@@ -133,11 +133,11 @@ public class User {
 		this.thumbnail = thumbnail;
 	}
 
-	public String getRatings() {
+	public int getRatings() {
 		return ratings;
 	}
 
-	public void setRatings(String ratings) {
+	public void setRatings(int ratings) {
 		this.ratings = ratings;
 	}
 
@@ -150,11 +150,18 @@ public class User {
 	}
 
 	public Set<Role> getRoles() {
-		return role;
+		return roles;
 	}
 
-	public void setRoles(Set<Role> role) {
-		this.role = role;
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", created_by=" + created_by + ", roles=" + roles + ", email=" + email + ", fName="
+				+ fName + ", lName=" + lName + ", contact=" + contact + ", dob=" + dob + ", gender=" + gender
+				+ ", thumbnail=" + thumbnail + ", ratings=" + ratings + ", enabled=" + enabled + "]";
 	}
 	
 }

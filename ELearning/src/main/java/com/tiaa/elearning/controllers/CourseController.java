@@ -23,38 +23,38 @@ public class CourseController {
 
 	@Autowired
 	private CourseRepository courseRepository;
-
+	
 	@Autowired
-	private UserRepository users;
+	private UserRepository userRepository;
 	
 	@Autowired
 	private JwtTokenProvider jwtTokenProvider;
-	
+
 	@GetMapping("/api/courses")
 	public Iterable<Course> course(){
 		return courseRepository.findAll();
 	}
-	
-	@PostMapping("/api/courses")
-	public Course save(@RequestBody Course course,@RequestHeader (name="Authorization") String token) throws Exception {
+
+	@PostMapping("/api/course")
+	public Course save(@RequestBody Course course,@RequestHeader("Authorization") String token)throws Exception{
 		
-		User user = users.findByEmail(jwtTokenProvider.getUsername(token));
+		User user = userRepository.findByEmail(jwtTokenProvider.getUsername(token.substring(7)));
 		if(user==null) {
 			throw new Exception("Invalid User Token");
 		}
-		user.setCreated_by(user);
+		course.setCourseAddedBy(user);
 
 		courseRepository.save(course);
 		
 		return course;
 	}
-	
-	@GetMapping("/api/courses/{id}")
+
+	@GetMapping("/api/course/{id}")
 	public Optional<Course> show(@PathVariable String id){
 		return courseRepository.findById(id);
 	}
-	
-	@PutMapping("/api/courses/{id}")
+
+	@PutMapping("/api/course/{id}")
 	public Course update(@PathVariable String id, @RequestBody Course course) {
 		Optional<Course> crs = courseRepository.findById(id);
 		
@@ -74,8 +74,8 @@ public class CourseController {
 		courseRepository.save(crs.get());
 		return crs.get();
 	}
-	
-	@DeleteMapping("/api/courses/{id}")
+
+	@DeleteMapping("/api/course/{id}")
 	public String delete(@PathVariable String id) {
 		Optional<Course> course = courseRepository.findById(id);
 		courseRepository.delete(course.get());

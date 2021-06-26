@@ -1,9 +1,9 @@
 package com.tiaa.elearning.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.tiaa.elearning.models.User;
 
-public interface UserRepository extends CrudRepository<User, String>{
-	User findByEmail(String email);
+public interface UserRepository extends MongoRepository<User, String>{
+	public User findByEmail(String email);
 }

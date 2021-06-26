@@ -1,9 +1,9 @@
 package com.tiaa.elearning.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.tiaa.elearning.models.Role;
 
-public interface RoleRepository extends CrudRepository<Role, String>{
-	Role findByRole(String role);
+public interface RoleRepository extends MongoRepository<Role, String>{
+	public Role findByRole(String role);
 }

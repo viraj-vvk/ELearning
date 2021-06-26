@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -38,8 +39,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and().authorizeRequests()
 			.antMatchers("/api/auth/login").permitAll()
-			.antMatchers("/api/auth/register").permitAll()
-			.antMatchers("/api/courses/**").hasAnyAuthority("ADMIN","Teacher").anyRequest().authenticated()
+			.antMatchers("/api/auth/register/**").permitAll()
+			.antMatchers("/api/courses/**").permitAll()
+			.antMatchers(HttpMethod.GET,"/api/course/**").permitAll()
+			.antMatchers("/api/course/**").hasAnyAuthority("ADMIN","TEACHER")
+			.anyRequest().authenticated()
 			.and().csrf()
 			.disable().exceptionHandling().authenticationEntryPoint(unauthorizedEntryPoint())
 			.and().apply(new JwtConfigurer(jwtTokenProvider));
