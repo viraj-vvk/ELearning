@@ -36,15 +36,15 @@ public class CustomUserDetailsService implements UserDetailsService{
 		return userRepository.findByEmail(email);
 	}
 	
-	public void saveUser(User user,int type) {
+	public void saveUser(User user,int key) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setEnabled(true);
 		Role userRole;
 		
-		switch (type) {
+		switch (key) {
 		case 1:
-			userRole= roleRepository.findByRole("ADMIN");			
-			break;
+//			userRole= roleRepository.findByRole("ADMIN");			
+//			break;
 		case 2:
 			userRole= roleRepository.findByRole("TEACHER");
 			break;
@@ -70,7 +70,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 	}
 	
 	private List<GrantedAuthority> getUserAuthority(Set<Role> userRoles) {
-		Set<GrantedAuthority> roles = new HashSet<GrantedAuthority>();
+		Set<GrantedAuthority> roles = new HashSet<>();
 		userRoles.forEach((role)->{
 			roles.add(new SimpleGrantedAuthority(role.getRole()));
 		});

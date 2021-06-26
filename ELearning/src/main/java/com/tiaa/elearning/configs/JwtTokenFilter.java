@@ -17,7 +17,6 @@ public class JwtTokenFilter extends GenericFilterBean{
 	private JwtTokenProvider jwtTokenProvider;
 
 	public JwtTokenFilter(JwtTokenProvider jwtTokenProvider) {
-		super();
 		this.jwtTokenProvider = jwtTokenProvider;
 	}
 	

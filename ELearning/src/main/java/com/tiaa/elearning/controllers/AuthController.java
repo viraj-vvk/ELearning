@@ -56,18 +56,34 @@ public class AuthController {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	@PostMapping("register/{key}")
-	public ResponseEntity register(@PathVariable int key, @RequestBody User user,@RequestHeader (name="Authorization") String token) {
+	@PostMapping("/register/{key}")
+	public ResponseEntity register(@PathVariable int key, @RequestBody User user) {
 		
 		User userExists = userService.findUserByEmail(user.getEmail());
 		if(userExists != null) {
 			throw new BadCredentialsException("User with username: "+user.getEmail()+" already exists");
 		}
 		
-		userService.saveUser(userExists,key);
+		userService.saveUser(user,key);
 		Map<Object, Object> model = new HashMap<>();
 		model.put("message", "User Registerd Successfully");
 		
 		return ResponseEntity.ok(model);
 	}
+	
+//	@SuppressWarnings("rawtypes")
+//	@PostMapping("register/{key}")
+//	public ResponseEntity register(@PathVariable int key, @RequestBody User user,@RequestHeader("Authorization") String token) {
+//		
+//		User userExists = userService.findUserByEmail(user.getEmail());
+//		if(userExists != null) {
+//			throw new BadCredentialsException("User with username: "+user.getEmail()+" already exists");
+//		}
+//		
+//		userService.saveUser(user,key);
+//		Map<Object, Object> model = new HashMap<>();
+//		model.put("message", "User Registerd Successfully");
+//		
+//		return ResponseEntity.ok(model);
+//	}
 }

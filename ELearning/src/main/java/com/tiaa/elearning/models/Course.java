@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Course {
 
 	@Id
-	private String Id;
+	private String id;
 	
 	@DBRef
 	private User courseAddedBy;
@@ -22,16 +22,28 @@ public class Course {
 	private String courseUpdatedOn;
 	private byte flag;
 	
-	public Course() {
-		super();
+	public Course() {}
+
+	public Course(String id, User courseAddedBy, String courseTitle, String courseCoverImg, String courseDesc,
+			int courseRating, int courseSubscribers, String courseCreatedOn, String courseUpdatedOn, byte flag) {
+		this.id = id;
+		this.courseAddedBy = courseAddedBy;
+		this.courseTitle = courseTitle;
+		this.courseCoverImg = courseCoverImg;
+		this.courseDesc = courseDesc;
+		this.courseRating = courseRating;
+		this.courseSubscribers = courseSubscribers;
+		this.courseCreatedOn = courseCreatedOn;
+		this.courseUpdatedOn = courseUpdatedOn;
+		this.flag = flag;
 	}
 
 	public String getId() {
-		return Id;
+		return this.id;
 	}
 
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public User getCourseAddedBy() {
@@ -105,6 +117,13 @@ public class Course {
 	public void setCourseTitle(String courseTitle) {
 		this.courseTitle = courseTitle;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", courseAddedBy=" + courseAddedBy + ", courseTitle=" + courseTitle
+				+ ", courseCoverImg=" + courseCoverImg + ", courseDesc=" + courseDesc + ", courseRating=" + courseRating
+				+ ", courseSubscribers=" + courseSubscribers + ", courseCreatedOn=" + courseCreatedOn
+				+ ", courseUpdatedOn=" + courseUpdatedOn + "]";
+	}
 	
 }
