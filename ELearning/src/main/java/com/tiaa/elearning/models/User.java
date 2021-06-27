@@ -1,5 +1,6 @@
 package com.tiaa.elearning.models;
 
+import java.util.Date;
 import java.util.Set;
 
 import org.springframework.data.annotation.Id;
@@ -29,13 +30,16 @@ public class User {
 	private String password;
 	private String dob;
 	private String gender;
-	private String created_on;
-	private String updated_on;
+	private Date created_on;
+	private Date updated_on;
 	private String thumbnail;
 	private int ratings=0;
 	private boolean enabled;
 	
-	public User() {}
+	public User() {
+		created_on = new Date();
+		updated_on = new Date();
+	}
 
 	public String getId() {
 		return id;
@@ -109,19 +113,19 @@ public class User {
 		this.gender = gender;
 	}
 
-	public String getCreated_on() {
+	public Date getCreated_on() {
 		return created_on;
 	}
 
-	public void setCreated_on(String created_on) {
+	public void setCreated_on(Date created_on) {
 		this.created_on = created_on;
 	}
 
-	public String getUpdated_on() {
+	public Date getUpdated_on() {
 		return updated_on;
 	}
 
-	public void setUpdated_on(String updated_on) {
+	public void setUpdated_on(Date updated_on) {
 		this.updated_on = updated_on;
 	}
 

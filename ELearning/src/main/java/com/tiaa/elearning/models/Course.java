@@ -1,5 +1,7 @@
 package com.tiaa.elearning.models;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,14 +20,17 @@ public class Course {
 	private String courseDesc;
 	private int courseRating=0;
 	private int courseSubscribers=0;
-	private String courseCreatedOn;
-	private String courseUpdatedOn;
+	private Date courseCreatedOn;
+	private Date courseUpdatedOn;
 	private byte flag;
 	
-	public Course() {}
+	public Course() {
+		courseCreatedOn = new Date();
+		courseUpdatedOn = new Date();
+	}
 
 	public Course(String id, User courseAddedBy, String courseTitle, String courseCoverImg, String courseDesc,
-			int courseRating, int courseSubscribers, String courseCreatedOn, String courseUpdatedOn, byte flag) {
+			int courseRating, int courseSubscribers, Date courseCreatedOn, Date courseUpdatedOn, byte flag) {
 		this.id = id;
 		this.courseAddedBy = courseAddedBy;
 		this.courseTitle = courseTitle;
@@ -86,19 +91,19 @@ public class Course {
 		this.courseSubscribers = courseSubscribers;
 	}
 
-	public String getCourseCreatedOn() {
+	public Date getCourseCreatedOn() {
 		return courseCreatedOn;
 	}
 
-	public void setCourseCreatedOn(String courseCreatedOn) {
+	public void setCourseCreatedOn(Date courseCreatedOn) {
 		this.courseCreatedOn = courseCreatedOn;
 	}
 
-	public String getCourseUpdatedOn() {
+	public Date getCourseUpdatedOn() {
 		return courseUpdatedOn;
 	}
 
-	public void setCourseUpdatedOn(String courseUpdatedOn) {
+	public void setCourseUpdatedOn(Date courseUpdatedOn) {
 		this.courseUpdatedOn = courseUpdatedOn;
 	}
 

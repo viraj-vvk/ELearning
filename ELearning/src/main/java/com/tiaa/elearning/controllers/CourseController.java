@@ -1,5 +1,6 @@
 package com.tiaa.elearning.controllers;
 
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class CourseController {
 	@GetMapping("/api/courses")
 	public Iterable<Course> course(){
 		return courseRepository.findAll();
+	}
+	
+	@GetMapping("/api/courses/{id}/{name}")
+	public String ex(@PathVariable String id,@PathVariable String name) {
+		return id+name;
 	}
 
 	@PostMapping("/api/course")
@@ -70,6 +76,8 @@ public class CourseController {
 			crs.get().setCourseSubscribers(course.getCourseSubscribers());
 		if(course.getFlag() != 0)
 			crs.get().setFlag(course.getFlag());
+		
+		course.setCourseUpdatedOn(new Date());
 		
 		courseRepository.save(crs.get());
 		return crs.get();
