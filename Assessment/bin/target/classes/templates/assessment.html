@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title> Assessment </title>
+    <meta charset="UTF-8">
+    <script>
+      var baseurl = "http://localhost:8080";
+      function loadAssessment(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",baseurl + "/Assessment?courseName=python",true);
+        xmlhttp.onreadystatechange = function() {
+          if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
+            var assessment = JSON.parse(xmlhttp.responseText);
+          
+            var main ="";
+            for (i = 0; i < assessment.length; i++){
+              opt = "opt"+(i+1);
+              main += (i+1)+". "+assessment[i].question+"<br><input type='radio' name="+opt+">"+assessment[i].a+"<br><input type='radio' name="+opt+">"+assessment[i].b+"<br><input type='radio' name="+opt+">"+assessment[i].c+"<br><input type='radio' name="+opt+">"+assessment[i].d+"<br><br>";
+            }
+            
+            var bottom = "</ol><input type='submit' value='Submit'>";
+            var tbl = main + bottom;
+            document.getElementById("assessment").innerHTML = tbl;
+          }
+        };
+        xmlhttp.send();
+      }
+      window.onload = function(){
+    	  loadAssessment();
+      }
+    </script>
+  </head>
+  <body>
+   <form action="/action_page.php">
+    <div id="assessment"> </div>
+   </form>
+  </body>
+</html>

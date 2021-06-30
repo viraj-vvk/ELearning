@@ -38,13 +38,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.httpBasic().disable().csrf()
 			.disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and().authorizeRequests()
+			
 			.antMatchers("/api/auth/login").permitAll()
 			.antMatchers("/api/auth/register/**").permitAll()
+			
 			.antMatchers("/api/courses/**").permitAll()
-//			.antMatchers(HttpMethod.GET,"/api/course").permitAll()
-			.antMatchers(HttpMethod.GET,"/api/**").permitAll()
+			.antMatchers(HttpMethod.GET,"/api/course").permitAll()
+//			.antMatchers(HttpMethod.GET,"/api/**").permitAll()
 			.antMatchers("/api/course/**").hasAnyAuthority("ADMIN","TEACHER")
+			
+			.antMatchers(HttpMethod.GET,"/api/contents/**").hasAnyAuthority("ADMIN","TEACHER","USER")
+			.antMatchers(HttpMethod.GET,"/api/content/**").hasAnyAuthority("ADMIN","TEACHER","USER")
 			.antMatchers("/api/content/**").hasAnyAuthority("TEACHER")
+			
+			.antMatchers(HttpMethod.GET,"/api/opteds/**").hasAnyAuthority("ADMIN")
+			.antMatchers(HttpMethod.GET,"/api/opted/**").hasAnyAuthority("ADMIN")
+			.antMatchers(HttpMethod.DELETE,"/api/opted/**").hasAnyAuthority("ADMIN")
+			.antMatchers("/api/opted/**").hasAnyAuthority("USER")
+			
 			.anyRequest().authenticated()
 			.and().csrf()
 			.disable().exceptionHandling().authenticationEntryPoint(unauthorizedEntryPoint())
