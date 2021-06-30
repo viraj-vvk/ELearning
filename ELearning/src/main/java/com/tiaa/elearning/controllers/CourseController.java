@@ -35,11 +35,6 @@ public class CourseController {
 	public Iterable<Course> course(){
 		return courseRepository.findAll();
 	}
-	
-	@GetMapping("/api/courses/{id}/{name}")
-	public String ex(@PathVariable String id,@PathVariable String name) {
-		return id+name;
-	}
 
 	@PostMapping("/api/course")
 	public Course save(@RequestBody Course course,@RequestHeader("Authorization") String token)throws Exception{
@@ -85,8 +80,10 @@ public class CourseController {
 
 	@DeleteMapping("/api/course/{id}")
 	public String delete(@PathVariable String id) {
-		Optional<Course> course = courseRepository.findById(id);
-		courseRepository.delete(course.get());
+//		Optional<Course> course = courseRepository.findById(id);
+//		courseRepository.delete(course.get());
+		
+		courseRepository.deleteById(id);
 		
 		return "Course Deleted";
 	}
